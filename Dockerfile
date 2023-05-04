@@ -1,6 +1,8 @@
 FROM python:3.11
 LABEL authors="yotam"
 ADD . .
-RUN pip install -r requirements.txt
+RUN mv rootCA.crt /usr/local/share/ca-certificates/rootCA.crt && \
+    update-ca-certificates && \
+    pip install -r requirements.txt
 
 CMD ["python3", "-u", "main.py"]
