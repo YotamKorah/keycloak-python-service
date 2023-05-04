@@ -1,0 +1,3 @@
+flask
+flask_oidc
+itsdangerous==2.0.1
